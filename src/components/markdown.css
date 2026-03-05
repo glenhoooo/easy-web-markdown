@@ -1,0 +1,115 @@
+.markdown-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.markdown-editor-pane,
+.markdown-preview-pane {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.markdown-editor-pane {
+  border-right: none;
+}
+
+.markdown-preview-pane {
+  padding: 16px;
+  background-color: #fff;
+}
+
+/* Draggable separator styling */
+.markdown-separator {
+  width: 8px;
+  background-color: #eaeaea;
+  cursor: col-resize;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+
+.markdown-separator:hover,
+.markdown-separator:active {
+  background-color: #d0d0d0;
+}
+
+/* Editor wrapper (toolbar + codemirror) */
+.md-editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.md-editor-codemirror {
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
+}
+
+/* Toolbar */
+.md-toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #e1e4e8;
+  background-color: #f6f8fa;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-shrink: 0;
+}
+
+.md-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  color: #24292e;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.md-toolbar-btn:hover {
+  background-color: #e1e4e8;
+  border-color: #d1d5da;
+}
+
+.md-toolbar-btn:active {
+  background-color: #d1d5da;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .markdown-separator {
+    width: 12px; /* slightly wider touch target on mobile */
+  }
+
+  .md-toolbar {
+    padding: 4px;
+    gap: 1px;
+  }
+
+  .md-toolbar-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
