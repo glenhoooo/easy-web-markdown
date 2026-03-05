@@ -23,5 +23,8 @@ export default defineConfig({
   minify: false,
 
   // 将样式文件复制到 dist 目录
-  onSuccess: "cp -r src/styles dist/styles",
+  onSuccess: "cp -R src/styles dist/",
+
+  // 注入组件独立的 CSS 文件，这样使用者引入组件时会自动注入样式
+  injectStyle: true,
 });
